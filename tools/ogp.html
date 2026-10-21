@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- SNSシェア画像（public/images/ogp.jpg）のひな形。文言を変えたら
+     node tools/screenshot.mjs --ogp で 1200×630 の画像を書き出します。 -->
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@800&family=Yomogi&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; }
+  .ogp { width: 1200px; height: 630px; position: relative; background: url(../public/images/ogp-bg.jpg) center/cover; font-family: "M PLUS Rounded 1c", sans-serif; color: #2E2B27; }
+  .ogp__in { position: absolute; left: 84px; top: 150px; }
+  .pre { font-family: "Yomogi", cursive; font-size: 32px; color: #3B5A7A; transform: rotate(-2deg); display: inline-block; margin-bottom: 18px; }
+  h1 { margin: 0; font-size: 66px; line-height: 1.38; letter-spacing: .05em; font-weight: 800; }
+  .mk { background: linear-gradient(transparent 62%, #F5D565 62%, #F5D565 92%, transparent 92%); }
+  .price { margin-top: 26px; font-size: 32px; font-weight: 800; }
+  .price b { color: #B44E33; }
+  .name { margin-top: 26px; font-size: 30px; letter-spacing: .08em; display: flex; align-items: center; gap: 14px; }
+  .name::before { content: ""; width: 40px; height: 3px; background: #2E2B27; border-radius: 2px; }
+</style>
+</head>
+<body>
+<div class="ogp">
+  <div class="ogp__in">
+    <div class="pre">全国どこからでも、オンラインで</div>
+    <h1>インスタの次は、<br><span class="mk">ホームページ。</span></h1>
+    <div class="price">1ページ <b>5,000円〜</b>・無料デモあり</div>
+    <div class="name">【仮：屋号】</div>
+  </div>
+</div>
+</body>
+</html>

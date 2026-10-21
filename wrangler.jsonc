@@ -1,0 +1,13 @@
+// Cloudflare Workers の設定（静的サイトとして public フォルダだけを公開する）
+// name は Cloudflare 上の Worker 名。【仮】hpworks → 公開URL https://hpworks.hp-web.workers.dev/
+{
+  "name": "hpworks",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  },
+  "workers_dev": true,
+  "preview_urls": true
+}
