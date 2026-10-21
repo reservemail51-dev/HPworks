@@ -11,8 +11,9 @@ SNSで集客する、全国の個人店向けホームページ制作サービ�
 - `sns/` … Instagram 用の画像（プロフィール・ハイライトのカバー）と、アイコンの元画像（公開されません）
 
 ## いまの状態
-- トップページ（`public/index.html`）ができています。デザインの確認が終わったら、残りのページ（サービス・料金／制作実績／ご依頼の流れ／よくある質問／お問い合わせ／質問シート／リンクページ／404）をつくります。
-- 屋号・LINE・Instagram・メールなどは【仮】のままです（`CLAUDE.md` の「【仮】の一括置き換え」を参照）。
+- 全ページできています：トップ／サービス・料金／制作実績（一覧・詳細）／ご依頼の流れ／よくある質問／お問い合わせ／送信完了／無料デモの申し込み（かんたん質問シート）／質問シート送信完了／SNSプロフィール用のリンクページ（`links.html`）／404。
+- 屋号・LINE・Instagram・メール・フォームの送信先などは【仮】のままです（`CLAUDE.md` の「【仮】の一括置き換え」を参照）。フォームは送信先が決まるまで「準備中」と表示して送信を止めています。
+- フォームの設定は `docs/SSGform設定シート.md`、自動返信・LINE・InstagramのDMの文面は `docs/自動返信メッセージ.md`。
 
 ## 見てみる
 `public/index.html` をブラウザで開けば、そのまま表示されます（Googleフォントはネットにつながっているときだけ反映）。
@@ -27,9 +28,9 @@ Cloudflare のダッシュボードで「Workers & Pages」→「作成」→ Gi
 `public/images/` に同じファイル名で上書きするか、Claude Code に「public/images に〇〇.png を入れたので差し替えて（WebPに変換して）」と頼んでください。
 
 ## SNSに貼るURL
-どのSNSから来たかを分けて見られるよう、プロフィールのリンクには `?from=` を付けておくのがおすすめです（リンクページができたら `links.html` に）。
-- Instagram：`https://hpworks.hp-web.workers.dev/?from=instagram`
-- Threads：`https://hpworks.hp-web.workers.dev/?from=threads`
+プロフィールのリンクには、大きなボタンが並んだ `links.html` を貼ります。どのSNSから来たかを分けて見られるよう、`?from=` を付けておくのがおすすめです。
+- Instagram：`https://hpworks.hp-web.workers.dev/links.html?from=instagram`
+- Threads：`https://hpworks.hp-web.workers.dev/links.html?from=threads`
 
 ## 実績のスクリーンショットをつくる（任意）
 パソコンに Node.js を入れて、このフォルダで `npm i -D playwright` のあと、

@@ -19,6 +19,8 @@ SNS（Instagram など）で集客する、全国の個人店向けホームペ�
 - `https://lin.ee/【仮：LINE】`（LINE友だち追加URL）
 - `【仮：Instagram】`（`https://www.instagram.com/〇〇/` と DM用 `https://ig.me/m/〇〇` の両方に使っている）
 - `【仮：メール】`、`【仮：トークン】`（Cloudflare Web Analytics）
+- `【仮：お問い合わせ用】`・`【仮：質問シート用】`（SSGform の送信先。`contact.html`・`hearing.html` の form action。【 が残っているあいだは JS が送信を止める）
+- `faq.html` の振込手数料・インボイスの【仮】、トップの自己紹介の【仮】
 - 屋号が決まったら `node tools/screenshot.mjs --ogp` でシェア画像を、`tools/screenshot.mjs` で実績用の画面画像（今は旧屋号の帯が写っている）を撮り直す。
 
 ## デザイン
@@ -39,6 +41,10 @@ SNS（Instagram など）で集客する、全国の個人店向けホームペ�
 5. `voice`（お客様の声）は実際にもらったものだけ。
 
 ## 補足
+- `hearing.html`（無料デモの申し込み＝かんたん質問シート）・`thanks.html`・`hearing-thanks.html`・`links.html`（SNSプロフィール用）・`404.html` は noindex。`links.html` はヘッダー・フッターなしの1枚。
+- `404.html` だけは、どの階層でも表示できるよう `/` から始まるパスを使っている。
+- FAQ を変えたら、`faq.html` の head にある FAQPage の JSON-LD も同じ内容に直す。
+- 実績の詳細は `work.html?id=<id>`（`js/works.js` がデータから表示）。
 - `public/samples/<id>/` は前回から移した架空店舗のサンプルサイト（tomoshibi・kohaku・hiuchi・soyogi・shizuku・mizunowa）。各ページに noindex、`_headers` でも `/samples/*` を noindex。お店の中身（地名など）は架空の設定としてそのまま。
 - 全ページの `</body>` 直前に Cloudflare Web Analytics のスクリプトをコメントで置いている（トークンが決まったら有効にする）。
 - プライバシーポリシーのページは置かない。フォームの送信ボタンの上に利用目的の一文を置く。
