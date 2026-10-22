@@ -1,0 +1,24 @@
+# Cloudflare のヘッダー設定（公開時に自動で読み込まれます）
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+/images/*
+  Cache-Control: public, max-age=604800
+
+/css/*
+  Cache-Control: public, max-age=3600
+
+/js/*
+  Cache-Control: public, max-age=3600
+
+/data/*
+  Cache-Control: public, max-age=300
+
+# 架空店舗のサンプルサイト：実在のお店と間違われないよう、画像も含めて検索に出さない
+/samples/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: public, max-age=3600
